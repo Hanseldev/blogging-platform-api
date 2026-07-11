@@ -1,0 +1,39 @@
+{
+  "name": "blogging-platform-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hanseldev/blogging-platform-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hanseldev/blogging-platform-api/issues"
+  },
+  "homepage": "https://github.com/Hanseldev/blogging-platform-api#readme",
+  "description": "",
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^6.19.3",
+    "@types/supertest": "^7.2.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.22.0",
+    "supertest": "^7.2.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.1.1",
+    "prisma": "^6.19.3",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2",
+    "vitest": "^3.2.7"
+  }
+}
