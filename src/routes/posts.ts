@@ -22,7 +22,19 @@ router.post("/", async (req: Request, res: Response, next: NextFunction) => {
 
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
 	try {
-		const articles = await prisma.post.findMany();
+		const term = req.query.term;
+		const articles =
+			typeof term === "string"
+				? await prisma.post.findMany({
+						where: {
+							OR: [
+								{ title: { contains: term, mode: "insensitive" } },
+								{ content: { contains: term, mode: "insensitive" } },
+								{ category: { contains: term, mode: "insensitive" } },
+							],
+						},
+					})
+				: await prisma.post.findMany();
 		return res.status(200).json(articles);
 	} catch (err) {
 		return next(err);
